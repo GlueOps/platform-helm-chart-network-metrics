@@ -1,0 +1,115 @@
+image:
+  repository: syepes/network_exporter
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.7.2"
+
+imagePullSecrets: []
+  # - name: my-image-pull-secret
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  privileged: true
+  capabilities:
+    add:
+      - CAP_NET_RAW
+      - CAP_NET_ADMIN
+
+service:
+  type: ClusterIP
+  port: 9427
+  annotations: 
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9427"
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+# If you do want to specify resources, uncomment the following lines, adjust
+# them as necessary, and remove the curly braces after 'resources:'.
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# Additional network_exporter command line arguments.
+args: []
+
+# The 'config' block contains the contents of the YAML based config file.
+config:
+  # Main Config
+  conf:
+    nameserver_timeout: 250ms
+    refresh: 2m
+
+  # Specific Protocol settings
+  icmp:
+    interval: 3s
+    timeout: 1s
+    count: 6
+
+  mtr:
+    interval: 3s
+    timeout: 500ms
+    max-hops: 30
+    count: 6
+
+  tcp:
+    interval: 3s
+    timeout: 1s
+
+  http_get:
+    interval: 15m
+    timeout: 5s
+
+  # Target list and settings
+  targets:
+    - name: google-dns1
+      host: 8.8.8.8
+      type: ICMP
+    - name: google-dns2
+      host: 8.8.4.4
+      type: MTR
+    - name: cloudflare-dns
+      host: 1.1.1.1
+      type: ICMP+MTR
+    - name: network-exporter
+      host: network-exporter.network-exporter.svc.cluster.local
+      type: ICMP
+    - name: network-exporter
+      host: network-exporter.network-exporter.svc.cluster.local
+      type: MTR
+    - name: nginx
+      host: http://nginx-service.default.svc.cluster.local
+      type: HTTPGet
+    - name: nginx
+      host: nginx-service.default.svc.cluster.local:80
+      type: TCP
