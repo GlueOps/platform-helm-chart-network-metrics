@@ -4,7 +4,6 @@ metadata:
   labels:
     release: kube-prometheus-stack
   name: {{ include "network_exporter.fullname" . }}
-  namespace: network-exporter
 spec:
   endpoints:
   - path: /metrics
