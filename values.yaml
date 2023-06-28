@@ -92,24 +92,18 @@ config:
 
   # Target list and settings
   targets:
-    - name: google-dns1
+    - name: google-dns
       host: 8.8.8.8
-      type: ICMP
-    - name: google-dns2
-      host: 8.8.4.4
-      type: MTR
+      type: ICMP+MTR
     - name: cloudflare-dns
       host: 1.1.1.1
       type: ICMP+MTR
-    - name: network-exporter
-      host: network-exporter.network-exporter.svc.cluster.local
-      type: ICMP
-    - name: network-exporter
-      host: network-exporter.network-exporter.svc.cluster.local
-      type: MTR
+    - name: glueops-network-exporter
+      host: glueops-network-exporter.glueops-core-network-exporter.svc.cluster.local
+      type: ICMP+MTR
     - name: nginx
-      host: http://nginx-service.default.svc.cluster.local
+      host: http://public-ingress-nginx-controller.glueops-core-public-ingress-nginx.svc.cluster.local
       type: HTTPGet
     - name: nginx
-      host: nginx-service.default.svc.cluster.local:80
+      host: public-ingress-nginx-controller.glueops-core-public-ingress-nginx.svc.cluster.local:80
       type: TCP
