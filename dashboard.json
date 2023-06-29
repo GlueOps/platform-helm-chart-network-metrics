@@ -25,7 +25,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 2,
-  "id": 30,
+  "id": 46,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1092,8 +1092,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "red",
-                    "value": null
+                    "color": "red"
                   },
                   {
                     "color": "green",
@@ -2073,13 +2072,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": [
-            "172.16.103.24:9427"
-          ],
-          "value": [
-            "172.16.103.24:9427"
-          ]
+          "selected": false,
+          "text": "172.16.217.225:9427",
+          "value": "172.16.217.225:9427"
         },
         "datasource": {
           "uid": "$datasource"
@@ -2107,8 +2102,8 @@
       {
         "current": {
           "selected": false,
-          "text": "google-dns1",
-          "value": "google-dns1"
+          "text": "cloudflare-dns",
+          "value": "cloudflare-dns"
         },
         "datasource": {
           "uid": "$datasource"
@@ -2251,8 +2246,8 @@
     ]
   },
   "timezone": "",
-  "title": "PingStation",
+  "title": "DevOps - GlueOps Network Exporter Metrics",
   "uid": "f4e3f639-c311-4c98-8db4-8687738d4b16",
-  "version": 12,
+  "version": 4,
   "weekStart": ""
 }
