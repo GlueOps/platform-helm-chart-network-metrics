@@ -2,7 +2,7 @@ image:
   repository: syepes/network_exporter
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.7.3"
+  tag: "1.7.3@sha256:ff6dc0dafb4d090190458185bc93e2d1e818752744dbd93bc7e7ee9542a4f91a"
 
 imagePullSecrets: []
   # - name: my-image-pull-secret
