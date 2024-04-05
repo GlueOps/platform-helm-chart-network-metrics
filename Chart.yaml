@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: 1.7.3
+appVersion: 1.7.6
 description: Prometheus exporter for monitoring ICMP,MTR,TCP,HTTP probes from all nodes in the cluster
 name: glueops-network-exporter
 type: application
-version: 0.2.1
+version: 0.4.0
