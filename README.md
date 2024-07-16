@@ -1,6 +1,6 @@
 # glueops-network-exporter
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.7.3](https://img.shields.io/badge/AppVersion-1.7.3-informational?style=flat-square)
+![Version: 0.4.1](https://img.shields.io/badge/Version-0.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.7.7](https://img.shields.io/badge/AppVersion-1.7.7-informational?style=flat-square)
 
 Prometheus exporter for monitoring ICMP,MTR,TCP,HTTP probes from all nodes in the cluster
 
@@ -41,7 +41,7 @@ Prometheus exporter for monitoring ICMP,MTR,TCP,HTTP probes from all nodes in th
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"syepes/network_exporter"` |  |
-| image.tag | string | `"1.7.3"` |  |
+| image.tag | string | `"1.7.7@sha256:e7a4c071acf615d460be7e1d3869777837a40ddaa017eef54a3334147de8c4cc"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.className | string | `""` |  |
